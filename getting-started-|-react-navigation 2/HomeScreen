@@ -1,4 +1,9 @@
 
+import * as React from 'react';
+import { Text, View, ScrollView } from 'react-native';
+import NewVideoList from '../list/NewVideoList';
+import BestVideoList from '../list/BestVideoList';
+import SpecialVideoList from '../list/SpecialVideoList';
 
 export default function HomeScreen() {
 	return (
