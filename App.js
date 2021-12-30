@@ -1,4 +1,5 @@
 import * as React from 'react';
+<<<<<<< HEAD
 import {Text, View , ScrollView} from 'react-native';
 
 import MainNavigator from './navigation/MainNavigator'
@@ -10,3 +11,61 @@ export default function App() {
     </View>
   );
 }
+=======
+import { Text, View, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+//screens
+import NewVideoList from './list/NewVideoList';
+import BestVideoList from './list/BestVideoList';
+import SpecialVideoList from './list/SpecialVideoList';
+import CustomFlatList from './components/CustomFlatList';
+
+import MainNavigator from './routes/mainNavigator';
+
+function HomeScreen() {
+	return (
+		<ScrollView showsVerticalScrollIndicator={false}>
+			<BestVideoList />
+			<NewVideoList />
+			<SpecialVideoList />
+		</ScrollView>
+	);
+}
+
+function CategoryScreen() {
+	return (
+		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+			<Text>Settings!</Text>
+		</View>
+	);
+}
+
+function FavoriteScreen() {
+	return (
+		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+			<Text>Settings!</Text>
+		</View>
+	);
+}
+const Tab = createBottomTabNavigator();
+
+export function MyTabs() {
+	return (
+		<Tab.Navigator>
+			<Tab.Screen name="Home" component={HomeScreen} />
+			<Tab.Screen name="Category" component={CategoryScreen} />
+			<Tab.Screen name="Favorite" component={FavoriteScreen} />
+		</Tab.Navigator>
+	);
+}
+
+export default function App() {
+	return (
+		<View style={{ flex: 1 }}>
+			<MainNavigator />
+		</View>
+	);
+}
+
+>>>>>>> 6ddc032e383ac66c5c28f0a86b38617173b91d8d
