@@ -7,7 +7,7 @@ const BestVideoList = props => {
     <MainView>
       <Title>Best Videos</Title>
       <Card> 
-      <CustomFlatList/>
+      <CustomFlatList navigation = {props.navigation}/>
       </Card>
     </MainView>
   );

@@ -1,7 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar,TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaView, FlatList, StyleSheet, Text,TouchableOpacity } from 'react-native';
 
 const DATA =[
 
@@ -19,18 +17,17 @@ const DATA =[
   },
 ];
 
-const Item = ({ title ,navigation }) => (
+const Item = ({ title , navigation }) => (
   <TouchableOpacity style={styles.item}
    
   onPress={() => navigation.navigate('VideoPlayerScreen')}>
-
+  
     <Text style={styles.title}>{title}</Text>
-
   </TouchableOpacity>
 );
 const App = ({navigation}) => {
   const renderItem = ({ item }) => (
-   <Item title={item.title} />
+   <Item title={item.title} navigation = {navigation} />
    );
 
   return (
@@ -43,26 +40,6 @@ const App = ({navigation}) => {
         keyExtractor={item => item.id}
       />
     </SafeAreaView>
-  );
-}
-
-function VideoPlayerScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Conference Details</Text>
-    </View>
-  );
-}
-const Stack = createStackNavigator();
-
-function CustomFlatList() {
-  return (
-     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={App} />
-        <Stack.Screen name="VideoPlayer" component={VideoPlayerScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
   );
 }
 
@@ -84,4 +61,4 @@ width : 200,
   },
 });
 
-export default CustomFlatList;
+export default App;
