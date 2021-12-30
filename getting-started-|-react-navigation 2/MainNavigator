@@ -1,33 +1,18 @@
-import * as React from 'react';
-import {Text, View} from 'react-native';
-import styled from 'styled-components/native';
-import CustomFlatList from '../components/CustomFlatList'
-const SpecialVideoList = props => {
-  return (
-    <MainView>
-      <Title>Special Videos</Title>
-      <Card> 
-      <CustomFlatList/>
-      </Card>
-    </MainView>
-  );
-};
-const MainView = styled.View`
-  height: 250px;
-`;
-const Title = styled.Text`
-  color: '#b8ece';
-  font-size: 15px;
-  font-weight: 600;
-  margin-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-`;
-const Card = styled.View`
-  
-  width: 100%;
-  height: 100%;
-  flex: 3;
-`;
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+ import TabNavigator from './TabNavigatior'
+import VideoPlayerScreen from '../screens/VideoPlayerScreen'
+import CategoryScreen from '../screens/CategoryScreen'
+const Stack = createStackNavigator();
 
-export default SpecialVideoList;
+export default function MainNavigaor() {
+  return (
+     <NavigationContainer >
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="TabNavigator" component={TabNavigator} />
+        <Stack.Screen name="VideoPlayerScreen" component={CategoryScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
