@@ -1,17 +1,23 @@
 import * as React from 'react';
 import {Text, View} from 'react-native';
 import styled from 'styled-components/native';
-import CustomFlatList from '../components/CustomFlatList'
+import BestVideoFlatList from '../components/BestVideoFlatList'
+
+
+
+
 const BestVideoList = props => {
   return (
     <MainView>
       <Title>Best Videos</Title>
       <Card> 
-      <CustomFlatList navigation = {props.navigation}/>
+      <BestVideoFlatList navigation = {props.navigation}/>
+    
       </Card>
     </MainView>
   );
 };
+
 const MainView = styled.View`
   height: 250px;
 `;

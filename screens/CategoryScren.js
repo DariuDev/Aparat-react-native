@@ -1,12 +1,26 @@
+import * as React from 'react';
+import {Text, View} from 'react-native';
+import styled from 'styled-components/native';
+import CategoryVideoFlatList from '../components/CategoryVideoFlatList'
 
- import * as React from 'react';
- import {Text, View , ScrollView} from 'react-native';
- 
- export default function CategoryScreen() {
-   return (
-     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-       <Text>Category!</Text>
-     </View>
-   );
- }
- 
+const CategoryScreen = props => {
+  return (
+    <MainView>
+      <Card>
+      <CategoryVideoFlatList navigation = {props.navigation}/>
+    </Card>
+      
+    </MainView>
+  );
+};
+
+const MainView = styled.View`
+flex:1;
+`;
+
+const Card = styled.View`
+  width: 100%;
+  height: 100%;
+`;
+
+export default CategoryScreen;

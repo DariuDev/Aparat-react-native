@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {Text, View} from 'react-native';
 import styled from 'styled-components/native';
-import CustomFlatList from '../components/CustomFlatList'
+import NewVideoFlatList from '../components/NewVideoFlatList'
 const NewVideoList = props => {
   return (
     <MainView>
       <Title>New Videos</Title>
      <Card> 
-      <CustomFlatList/>
+      <NewVideoFlatList/>
       </Card>
     </MainView>
   );
