@@ -9,8 +9,8 @@ export default function HomeScreen({navigation}) {
   return (
     <ScrollView showsVerticalScrollIndicator = {false} >
     <BestVideoList navigation = {navigation} />
-      <NewVideoList />
-      <SpecialVideoList />
+      <NewVideoList navigation = {navigation}/>
+      <SpecialVideoList navigation = {navigation}/>
      </ScrollView>
   );
 }
