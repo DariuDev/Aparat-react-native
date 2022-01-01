@@ -7,7 +7,7 @@ const NewVideoList = props => {
     <MainView>
       <Title>New Videos</Title>
      <Card> 
-      <NewVideoFlatList/>
+      <NewVideoFlatList navigation = {props.navigation}/>
       </Card>
     </MainView>
   );
