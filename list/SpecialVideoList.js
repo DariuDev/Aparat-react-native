@@ -7,7 +7,7 @@ const SpecialVideoList = props => {
     <MainView>
       <Title>Special Videos</Title>
       <Card> 
-      <SpecialVideoFlatList/>
+      <SpecialVideoFlatList navigation = {props.navigation}/>
       </Card>
     </MainView>
   );
