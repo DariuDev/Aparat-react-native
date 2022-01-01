@@ -23,7 +23,7 @@ const NewVideoFlatList = ({navigation}) => {
         data={data.articles}
        renderItem={({ item }) => (
 <TouchableOpacity style={styles.item}
-  onPress={() => navigation.navigate('VideoPlayerScreen',{ data:data })}>
+  onPress={() => navigation.navigate('VideoPlayerScreen',{ id:item.title })}>
     <Text style={styles.title}>{item.id + '. ' + item.title}</Text>
   </TouchableOpacity> )}
         keyExtractor={({ id }, index) => id}
