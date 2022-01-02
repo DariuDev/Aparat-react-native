@@ -22,13 +22,13 @@ const MainView = styled.View`
   height: 250px;
 `;
 const Title = styled.Text`
-  color: '#b8ece';
+  
   font-size: 15px;
   font-weight: 600;
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-
+color : red;
 `;
 const Card = styled.View`
   width: 100%;
