@@ -14,26 +14,33 @@ const homeStack = createNativeStackNavigator();
 
 export default function TabNavigator() {
   return (
-    <Tab.Navigator screenOptions={({ route }) => ({
+    <Tab.Navigator screenOptions={ ({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
             if (route.name === 'Home') {
               iconName = focused
                 ? 'ios-information-circle'
-                : 'ios-information-circle-outline';
+                : 'ios-list';
             } else if (route.name === 'Category') {
-              iconName = focused ? 'ios-list-box' : 'ios-list';
+              iconName = focused ? 'ios-information-circle' : 'ios-list';
             }else if (route.name === 'Favorite') {
               iconName = focused ? 'ios-list-box' : 'ios-list';
             }
-
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
-        })} >
+      style: {
+        backgroundColor: 'red',
+  },
+          tabBarActiveTintColor: 'red',
+          tabBarInactiveTintColor: 'blue',
+         headerStyle: { backgroundColor: 'red'  },
+         headerTintColor : 'white' ,
+         headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+         
+        }) } >
       <Tab.Screen  name = 'Home' component={HomeScreen} >
       <homeStack.Screen  
       name = 'VideoPlayer' component = {VideoPlayerScreen} />
