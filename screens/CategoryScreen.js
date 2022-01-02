@@ -1,15 +1,14 @@
 import * as React from 'react';
-import {Text, View} from 'react-native';
+import { Text, View } from 'react-native';
 import styled from 'styled-components/native';
-import CategoryVideoFlatList from '../components/CategoryVideoFlatList'
+import CategoryVideoFlatList from '../components/CategoryVideoFlatList';
 
-const CategoryScreen = props => {
+const CategoryScreen = (props) => {
   return (
     <MainView>
       <Card>
-      <CategoryVideoFlatList navigation = {props.navigation}/>
-    </Card>
-      
+        <CategoryVideoFlatList navigation={props.navigation} />
+      </Card>
     </MainView>
   );
 };
