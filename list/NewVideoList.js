@@ -16,7 +16,7 @@ const MainView = styled.View`
   height: 250px;
 `;
 const Title = styled.Text`
-  color: '#b8ece';
+  color: red;
   font-size: 15px;
   font-weight: 600;
   margin-left: 20px;
