@@ -5,7 +5,7 @@ import {Text, View , ScrollView} from 'react-native';
 export default function FavoriteScreen() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings!</Text>
+      <Text>Favorite!</Text>
     </View>
   );
 }
