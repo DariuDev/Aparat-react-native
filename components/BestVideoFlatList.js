@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar,TouchableOpacity ,Image} from 'react-native';
 import {json} from '../webService/BestVideoApi'
 
-
 const BestVideoFlatList = ({navigation}) => {
    const [isLoading, setLoading] = useState(true);
    const [data, setData] = useState([]);
