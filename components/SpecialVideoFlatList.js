@@ -16,22 +16,25 @@ const SpecialVideoFlatList = ({navigation}) => {
    }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    
       <FlatList
       showsHorizontalScrollIndicator = {false}
       horizontal = {true}
         data={data}
        renderItem={({ item }) => (
+         <SafeAreaView style={styles.container}>
 <TouchableOpacity style={styles.item}
-  onPress={() => navigation.navigate('VideoPlayerScreen',{title : item.title ,link : item.link , description : item.description , duration : item.time ,view : item.view})}>
+  onPress={() => navigation.navigate('VideoPlayer',{title : item.title ,link : item.link , description : item.description , duration : item.time ,view : item.view})}>
   <View style = {{flex : 1}}>
   <Image source={{uri : item.icon }} style = {styles.imageView}/>
   </View>
     <Text style={styles.title}>{ item.title}</Text>
-  </TouchableOpacity> )}
+
+  </TouchableOpacity>
+   </SafeAreaView> )}
         keyExtractor={({ id }, index) => id}
       />
-    </SafeAreaView>
+   
   );
 }
 
