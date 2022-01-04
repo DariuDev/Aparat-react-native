@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, ScrollView, Button, SafeAreaView } from 'react-native';
+import { Text, View, ScrollView, Button,Dimensions } from 'react-native';
 import { Audio, Video } from 'expo-av';
 
 export default class VideoPlayerScreen extends React.Component {
@@ -9,9 +9,8 @@ export default class VideoPlayerScreen extends React.Component {
   render() {
     const { navigation, route } = this.props;
     return (
-      <SafeAreaView>
-      <View >
-        <Button onPress={() => navigation.goBack()} title="Back"/>
+      <View style = {{flex : 1}} >
+        
         <View style={{ alignItems: 'center' }}>
           <Text style={{ fontSize: 32 }}>{route.params.title}</Text>
           <Video
@@ -32,7 +31,7 @@ export default class VideoPlayerScreen extends React.Component {
             }}
           />
         </View>
-        <View style = {{flex : 1 ,flexDirection : 'row' }}>
+        <View style = {{flexDirection : 'row' }}>
         <View style = {{padding : 10 , borderRadius : 5 , borderWidth : 1  , borderColor : '#00ffff' , margin : 10,}}>
           <Text>view : {route.params.view}</Text>
         </View>
@@ -40,11 +39,10 @@ export default class VideoPlayerScreen extends React.Component {
           <Text> time : {route.params.duration}</Text>
         </View>
         </View>
-          <View style = {{padding : 10 , borderRadius : 5 , borderWidth : 1  , borderColor : '#00ffff' , margin : 10,}}>
+          <View style = {{flex : 1 ,padding : 10 , borderRadius : 5 , borderWidth : 1  , borderColor : '#00ffff' , margin : 10,}}>
           <Text>description : {route.params.description}</Text>
         </View>
       </View>
-      </SafeAreaView>
     );
   }
 }
