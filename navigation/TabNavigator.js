@@ -15,6 +15,8 @@ const homeStack = createNativeStackNavigator();
 export default function TabNavigator() {
   return (
     <Tab.Navigator screenOptions={ ({ route }) => ({
+      headerShown : false ,
+      backgroundColor : 'red',
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
@@ -29,9 +31,7 @@ export default function TabNavigator() {
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-      style: {
-        backgroundColor: 'red',
-  },
+      
           tabBarActiveTintColor: 'red',
           tabBarInactiveTintColor: 'blue',
          headerStyle: { backgroundColor: 'red'  },
