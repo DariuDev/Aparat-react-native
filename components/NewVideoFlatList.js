@@ -23,7 +23,7 @@ const NewVideoFlatList = ({navigation}) => {
         data={data}
        renderItem={({ item }) => (
 <TouchableOpacity style={styles.item}
-  onPress={() => navigation.navigate('VideoPlayerScreen',{title : item.title ,link : item.link , description : item.description , duration : item.time,view : item.view})}>
+  onPress={() => navigation.navigate('VideoPlayer',{title : item.title ,link : item.link , description : item.description , duration : item.time,view : item.view})}>
   <View style = {{flex : 1}}>
   <Image source={{uri : item.icon }} style = {styles.imageView}/>
   </View>
@@ -56,8 +56,7 @@ width : 200,
   imageView : {
 width: ('100%'),
        height: ('100%'),
-       borderTopRightRadius: 14,
-       borderTopLeftRadius: 14,
+       borderRadius : 14
   }
 });
 
