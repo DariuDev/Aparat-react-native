@@ -9,9 +9,11 @@ const Stack = createStackNavigator();
 export default function MainNavigaor() {
   return (
      <NavigationContainer>
-      <Stack.Navigator screenOptions = {{headerShown : false}}>
-        <Stack.Screen name="TabNavigator" component={TabNavigator} />
-        <Stack.Screen name="VideoPlayerScreen" component={VideoPlayerScreen} />
+      <Stack.Navigator screenOptions = {{headerStyle: {
+            backgroundColor: 'red'
+          }}}>
+        <Stack.Screen name="Aparat" component={TabNavigator} />
+        <Stack.Screen name="VideoPlayer" component={VideoPlayerScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
